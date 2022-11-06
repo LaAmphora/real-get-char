@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block title %}View All Users{% endblock %}
 {% block content %}
-    {% for item in values %}
-        <p>Name: {{item.name}}, Pawprint: {{item.pawprint}}</p>
+    <div class="btngroup">
+    {% for item in drivers %}
+        <button>{{item.name}}, {{item.age}}, from {{item.start}} to {{item.end}} at {{item.loc}}</button>
     {% endfor %}
+    </div>
 {% endblock %}
