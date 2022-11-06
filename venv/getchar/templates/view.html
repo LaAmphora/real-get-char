@@ -1,6 +1,17 @@
 {% extends "base.html" %}
 {% block title %}View All Users{% endblock %}
 {% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% for drive in drivers %}
+        <p>{{drive.name}} ({{drive.age}}) from {{drive.start}} to {{drive.end}} at {{drive.loc}}<button type="button" onclick="alert('Hello world!')">getThisChar</button></p>
+    {% endfor %}
+<!--
 <style>
     table, th, td {
       border:3px solid rgb(10, 58, 112);
@@ -38,5 +49,6 @@
         <td>Lafferre</td> 
         <td>23-3</td>
     </tr>
-  </table>
+</table>
+-->
 {% endblock %}

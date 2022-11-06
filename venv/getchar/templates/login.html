@@ -8,8 +8,8 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-<form action="{{ url_for("pawprint")}}" method="post">
+<form action="/login" method="POST">
 <label for="pawprint">Pawprint:</label>
 <input type="text" id="pawprint" name="pp" placeholder="pawprint">
-<button type="submit">Login</button>
+<button type="submit">Submit</button>
 {% endblock %}

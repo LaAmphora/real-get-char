@@ -1,7 +1,7 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, flash, redirect
  
 app = Flask(__name__)
-
+app.secret_key = "topsecretkey"
 
 class Driver():
     def __init__(self, paw, name, age, gender, start, end, loc, phone, cmodel, cmake, clicense):
@@ -23,22 +23,25 @@ alex = Driver('ajp96', 'Alex', 22, 'NB', 22, 0, 'Gillett', 314-797-9085, 'Porsch
 cameron = Driver('cap39', 'Cameron', 20, 'M', 19, 0, 'downtown Columbia', 423-255-2728, 'Subaru', 'Outback', '321CBA')
 abby = Driver('als72', 'Abby', 18, 'F', 23, 3, 'Lafferre Hall', 573-701-5455, 'GMC', 'Sierra', 'A1B2C3')
         
-drivers = [john, sarah, alex, cameron, abby]
+#drivers = [john, sarah, alex, cameron, abby]
+
 
 @app.route('/confirm')
 def confirm():
     return render_template("confirm.html")
 
+
 @app.route('/view', methods=["GET", "POST"])
 def view():
-    return render_template("view.html")
+    return render_template("view.html", drivers = [john, sarah, alex, cameron, abby])
 
-     
-@app.route('/paw', methods =["GET", "POST"])
-def pawprint():
+
+@app.route('/login', methods =["GET", "POST"])
+def login():
     if request.method == "POST":
        pawprint = request.form.get("pp")
-       return render_template('view.html')
+       flash(pawprint + " is successfully logged in")
+       return redirect('/view')
     return render_template("login.html")
  
 
