@@ -9,17 +9,19 @@
         {% endif %}
     {% endwith %}
     <h1>Char Order Successful!</h1>
-    <p>Driver: {{name}}</p>
+    <h2>Driver Info:</h2>
+    <p>Name: {{name}}</p>
     <p>Age: {{age}}</p>
     <p>Gender: {{gender}}</p>
     <p>Shift Start Time: {{start}}</p>
     <p>Shift End Time: {{end}}</p>
     <p>Location: {{loc}}</p>
-    <p>Char Make: {{cmake}}</p>
-    <p>Char Model: {{cmodel}}</p>
-    <p>Char License Plate: {{clicense}}</p>
-    <p>Driver's Phone #: {{phone}}</p>
-
+    <p>Phone #: {{phone}}</p>
+    <h2>Char Info:</h2>
+    <p>Make: {{cmake}}</p>
+    <p>Model: {{cmodel}}</p>
+    <p>License Plate #: {{clicense}}</p>
+    <p># of Available Seats: {{cseats}}</p>
 
     <a href="{{ url_for('view') }}">Back to Driver List</a>
 
