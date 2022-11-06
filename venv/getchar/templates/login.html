@@ -8,8 +8,21 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
 <form action="/login" method="POST">
-<label for="pawprint">Pawprint:</label>
-<input type="text" id="pawprint" name="pp" placeholder="pawprint">
-<button type="submit">Submit</button>
+    <header>
+        <body>
+            <div class="container">
+                <div class="centered-element">
+                  <p>
+                    <center><label for="pawprint">Pawprint:</label></center>
+                    <center><input type="text" id="pawprint" name="pp" placeholder="pawprint"></center>
+                    <center><button type="submit">Submit</button></center>
+                  </p>
+                </div>
+            </div>
+        </body>
+    </header>
+    
+
 {% endblock %}
