@@ -4,6 +4,19 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+body{
+    background-color:"#8fbc8f";
+}
+
+h1{
+    text-align:center;
+    width:100%;
+    background-color:rgb(138, 178, 219);
+    padding:20px;
+    color: #fff;
+    font-family:'New Century Schoolbook', 'TeX Gyre Schola', serif;
+}
+
 .banner{ /*putting gradient over bg image*/
     width: 100%;
     height: 100vh;
@@ -12,49 +25,7 @@
     background-position: center;
 }
 
-/*.navbar{ 
-    width: 90%;
-    margin: auto;
-    padding: 35px 0; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} */
-
-/*.logo{
-    width: 150px;
-    cursor: pointer;
-}*/
-
-/*.navbar ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
-}
-
-.navbar ul li a{
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-}
-
-.navbar ul li::after{
-    content: '';
-    height: 3px;
-    width: 0;
-    background: #fff;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: 0.5s;
-}
-
-.navbar ul li:hover::after{ 
-    width: 100%;
-}*/
-
-.content { /*editing position of center content*/
+.content { /*editing position of all center content*/
     width: 50%;
     position: absolute;
     top: 50%;
@@ -64,26 +35,47 @@
     text-decoration: none;
 }
 
-.content a{ /*editing position of center content*/
-    width: 100%;
+.content a{ /*editing "LOGIN" link in content*/
+    width: 10px;
     position:absolute;
-    top: 50%;
-    transform: translateY(-80%);
+    transform: translateY(-95%);
     text-align: center;
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
 }
 
-.content h1{ /*changing center content header font size*/
+.content h1{ /*editing "Welcome to getChar" in content*/
     font-size: 35px;
     margin-top: 60px;
     margin-left: 50%;   
 }
-.content p{ /*font size of center paragraph*/
+.content p{ /*editing "please login first..." in content*/
     transform: translateX(50%);
     font-weight: 100;
-    line-height: 25px;
+    line-height: 15px;
+}
+
+/*.content a{ 
+    width: 90%;
+    margin: auto;
+    padding: 35px 0; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+.content::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    transition: 0.5s;
+}
+.content:hover::after{ 
+    width: 10%;
 }
 
 button{

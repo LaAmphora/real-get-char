@@ -4,32 +4,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
 
 </head>
-<style>
-    body{
-        background-color:"#8fbc8f";
-    }
-    h1{
-        text-align:center;
-        width:100%;
-        background-color:rgb(138, 178, 219);
-        padding:20px;
-        color: #fff;
-        font-family:'New Century Schoolbook', 'TeX Gyre Schola', serif;
-    }
-
-    </style>
-</head>
 <body>
-
     <h1>getChar</h1>
-    <!--{% block content %}-->
     <div class="banner"></div>
         <div class="content">
             <h1>Welcome to getChar Ridesharing!</h1>
             <p>Please login first to find a ride</p>
             <a href="{{ url_for('login') }}">LOGIN</a>
         </div>
-    <!--{% endblock %}-->
 
 </body>
 </html>
