@@ -4,11 +4,7 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-body{
-    background-color:"#8fbc8f";
-}
-
-h1{
+h1{ /* "getChar" header at the top*/
     text-align:center;
     width:100%;
     background-color:rgb(138, 178, 219);
@@ -25,24 +21,22 @@ h1{
     background-position: center;
 }
 
-.content { /*editing position of all center content*/
+.content { /*editing all of center content*/
     width: 50%;
-    position: absolute;
+    position:absolute;
     top: 50%;
-    transform: translateY(-50%);
     text-align: center;
     color: #fff;
-    text-decoration: none;
+    align-items: center;
 }
 
 .content a{ /*editing "LOGIN" link in content*/
     width: 10px;
     position:absolute;
-    transform: translateY(-95%);
+    transform: translateX(100%);
     text-align: center;
     color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
 }
 
 .content h1{ /*editing "Welcome to getChar" in content*/
@@ -56,21 +50,21 @@ h1{
     line-height: 15px;
 }
 
-/*.content a{ 
+.content a{ 
     width: 90%;
     margin: auto;
     padding: 35px 0; 
     display: flex;
     align-items: center;
     justify-content: space-between;
-} */
+} 
 .content::after{
     content: '';
     height: 3px;
     width: 0;
     background: #fff;
     position: absolute;
-    left: 0;
+    left: 50%;
     bottom: 0px;
     transition: 0.5s;
 }
