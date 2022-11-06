@@ -24,18 +24,21 @@ cameron = Driver('cap39', 'Cameron', 20, 'M', 19, 0, 'downtown Columbia', 423-25
 abby = Driver('als72', 'Abby', 18, 'F', 23, 3, 'Lafferre Hall', 573-701-5455, 'GMC', 'Sierra', 'A1B2C3')
         
 drivers = [john, sarah, alex, cameron, abby]
-   
+
+@app.route('/confirm')
+def confirm():
+    return render_template("confirm.html")
 
 @app.route('/view', methods=["GET", "POST"])
 def view():
-    return render_template("view.html", drivers)
+    return render_template("view.html")
 
      
 @app.route('/paw', methods =["GET", "POST"])
 def pawprint():
     if request.method == "POST":
        pawprint = request.form.get("pp")
-       return pawprint + " successfully logged in."
+       return render_template('view.html')
     return render_template("login.html")
  
 
