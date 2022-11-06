@@ -8,6 +8,7 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
+    <h1>Available Chars:</h1>
     {% for drive in drivers %}
         <p>{{drive.name}} ({{drive.age}}) from {{drive.start}} to {{drive.end}} at {{drive.loc}}   <a href="{{ url_for('check', user = drive.name) }}">{{drive.name}}'s Char Details</a></p>
     {% endfor %}

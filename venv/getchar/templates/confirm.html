@@ -1,6 +1,27 @@
 {% extends "base.html" %}
 {% block title %}Char Confirmation{% endblock %}
 {% block content %}
-<h1>Your char is on its way!</h1>
-<center><img src="{{url_for('static', filename='car.webp')}}" align="middle" /></center>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1>Char Order Successful!</h1>
+    <p>Driver: {{name}}</p>
+    <p>Age: {{age}}</p>
+    <p>Gender: {{gender}}</p>
+    <p>Shift Start Time: {{start}}</p>
+    <p>Shift End Time: {{end}}</p>
+    <p>Location: {{loc}}</p>
+    <p>Char Make: {{cmake}}</p>
+    <p>Char Model: {{cmodel}}</p>
+    <p>Char License Plate: {{clicense}}</p>
+    <p>Driver's Phone #: {{phone}}</p>
+
+
+    <a href="{{ url_for('view') }}">Back to Driver List</a>
+
+<!--<center><img src="{{url_for('static', filename='car.webp')}}" align="middle" /></center>-->
 {% endblock %}

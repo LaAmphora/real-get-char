@@ -17,18 +17,21 @@ class Driver():
         self.cmodel = cmodel
         self.clicense = clicense
         
-john = Driver('jcw24', 'John', 20, 'M', 20, 0, '101 Main St', 314-449-3602, 'Nissan', 'Sentra', 'ABC123')
-sarah = Driver('ssh33', 'Sarah', 19, 'F', 21, 1, 'Sigma Nu', 404-425-4583, 'Honda', 'Civic', '123ABC')
-alex = Driver('ajp96', 'Alex', 22, 'NB', 22, 0, 'Gillett', 314-797-9085, 'Porsche', 'Cayenne', '1A2B3C')
-cameron = Driver('cap39', 'Cameron', 20, 'M', 19, 0, 'downtown Columbia', 423-255-2728, 'Subaru', 'Outback', '321CBA')
-abby = Driver('als72', 'Abby', 18, 'F', 23, 3, 'Lafferre Hall', 573-701-5455, 'GMC', 'Sierra', 'A1B2C3')
+john = Driver('jcw24', 'John', 20, 'M', 20, 0, '101 Main St', '314-449-3602', 'Nissan', 'Sentra', 'ABC123')
+sarah = Driver('ssh33', 'Sarah', 19, 'F', 21, 1, 'Sigma Nu', '404-425-4583', 'Honda', 'Civic', '123ABC')
+alex = Driver('ajp96', 'Alex', 22, 'NB', 22, 0, 'Gillett', '314-797-9085', 'Porsche', 'Cayenne', '1A2B3C')
+cameron = Driver('cap39', 'Cameron', 20, 'M', 19, 0, 'downtown Columbia', '423-255-2728', 'Subaru', 'Outback', '321CBA')
+abby = Driver('als72', 'Abby', 18, 'F', 23, 3, 'Lafferre Hall', '573-701-5455', 'GMC', 'Sierra', 'A1B2C3')
 
 drivers = [john, sarah, alex, cameron, abby]
 
-@app.route('/confirm')
-def confirm():
-    return render_template("confirm.html")
-
+@app.route('/confirm/<user>')
+def confirm(user):
+    for drive in drivers:
+        if user == (drive.name):
+            usr = drive
+            return render_template("confirm.html", name = usr.name, age = usr.age, gender = usr.gender, start = usr.start, end = usr.end, loc = usr.loc, cmake = usr.cmake, cmodel = usr.cmodel, clicense = usr.clicense, phone = usr.phone)    
+    return render_template("check.html", name = usr.name, age = usr.age, gender = usr.gender, start = usr.start, end = usr.end, loc = usr.loc)
 
 @app.route('/check/<user>', methods=["GET","POST"])
 def check(user):
