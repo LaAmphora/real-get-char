@@ -39,7 +39,7 @@ def check(user):
     for drive in drivers:
         if user == (drive.name):
             usr = drive
-            return render_template("check.html", name = usr.name, age = usr.age, gender = usr.gender, start = usr.start, end = usr.end, loc = usr.loc)
+            return render_template("check.html", name = usr.name, age = usr.age, gender = usr.gender, start = usr.start, end = usr.end, loc = usr.loc, cseats = usr.cseats)
     return render_template("view.html", drivers = drivers)
 
 
