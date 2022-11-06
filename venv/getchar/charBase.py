@@ -31,6 +31,11 @@ def confirm():
     return render_template("confirm.html")
 
 
+@app.route('/check/<user>', methods=["GET","POST"])
+def check(user):
+    return render_template("check.html", user = user)
+
+
 @app.route('/view', methods=["GET", "POST"])
 def view():
     return render_template("view.html", drivers = [john, sarah, alex, cameron, abby])

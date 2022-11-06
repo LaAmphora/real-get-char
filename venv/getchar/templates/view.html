@@ -9,8 +9,11 @@
         {% endif %}
     {% endwith %}
     {% for drive in drivers %}
-        <p>{{drive.name}} ({{drive.age}}) from {{drive.start}} to {{drive.end}} at {{drive.loc}}<button type="button" onclick="alert('Hello world!')">getThisChar</button></p>
+        <!--<p>{{drive.name}} ({{drive.age}}) from {{drive.start}} to {{drive.end}} at {{drive.loc}}   <button type="button" onclick=<form action="{{ (url_for('check', user = drive)) }}">>{{drive.name}}'s Char Details</button></p>-->
+        <p>{{drive.name}} ({{drive.age}}) from {{drive.start}} to {{drive.end}} at {{drive.loc}}   <a href="{{ url_for('check', user = drive) }}">{{drive.name}}'s Char Details</a></p>
+
     {% endfor %}
+
 <!--
 <style>
     table, th, td {
