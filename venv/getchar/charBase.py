@@ -22,9 +22,8 @@ sarah = Driver('ssh33', 'Sarah', 19, 'F', 21, 1, 'Sigma Nu', 404-425-4583, 'Hond
 alex = Driver('ajp96', 'Alex', 22, 'NB', 22, 0, 'Gillett', 314-797-9085, 'Porsche', 'Cayenne', '1A2B3C')
 cameron = Driver('cap39', 'Cameron', 20, 'M', 19, 0, 'downtown Columbia', 423-255-2728, 'Subaru', 'Outback', '321CBA')
 abby = Driver('als72', 'Abby', 18, 'F', 23, 3, 'Lafferre Hall', 573-701-5455, 'GMC', 'Sierra', 'A1B2C3')
-        
-#drivers = [john, sarah, alex, cameron, abby]
 
+drivers = [john, sarah, alex, cameron, abby]
 
 @app.route('/confirm')
 def confirm():
@@ -33,12 +32,16 @@ def confirm():
 
 @app.route('/check/<user>', methods=["GET","POST"])
 def check(user):
-    return render_template("check.html", user = user)
+    for drive in drivers:
+        if user == (drive.name):
+            usr = drive
+            return render_template("check.html", name = usr.name, age = usr.age, gender = usr.gender, start = usr.start, end = usr.end, loc = usr.loc)
+    return render_template("view.html", drivers = drivers)
 
 
 @app.route('/view', methods=["GET", "POST"])
 def view():
-    return render_template("view.html", drivers = [john, sarah, alex, cameron, abby])
+    return render_template("view.html", drivers = drivers)
 
 
 @app.route('/login', methods =["GET", "POST"])

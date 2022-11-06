@@ -8,12 +8,15 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-    drive = user
-    <p>Driver: {{drive.name}}</p>
-    <p>Age: {{drive.age}}</p>
-    <p>Gender: {{drive.gender}}</p>
-    <p>Shift Start Time: {{drive.start}}</p>
-    <p>Shift End Time: {{drive.end}}</p>
-    <p>Location: {{drive.loc}}</p>
+
+    <p>Driver: {{name}}</p>
+    <p>Age: {{age}}</p>
+    <p>Gender: {{gender}}</p>
+    <p>Shift Start Time: {{start}}</p>
+    <p>Shift End Time: {{end}}</p>
+    <p>Location: {{loc}}</p>
+
+    <a href="{{ url_for('view') }}">Back to Driver List</a>
+    <a href="{{ url_for('confirm') }}">Confirm Char</a>
 
 {% endblock %}

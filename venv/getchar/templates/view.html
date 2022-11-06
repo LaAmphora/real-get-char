@@ -9,49 +9,6 @@
         {% endif %}
     {% endwith %}
     {% for drive in drivers %}
-        <!--<p>{{drive.name}} ({{drive.age}}) from {{drive.start}} to {{drive.end}} at {{drive.loc}}   <button type="button" onclick=<form action="{{ (url_for('check', user = drive)) }}">>{{drive.name}}'s Char Details</button></p>-->
-        <p>{{drive.name}} ({{drive.age}}) from {{drive.start}} to {{drive.end}} at {{drive.loc}}   <a href="{{ url_for('check', user = drive) }}">{{drive.name}}'s Char Details</a></p>
-
+        <p>{{drive.name}} ({{drive.age}}) from {{drive.start}} to {{drive.end}} at {{drive.loc}}   <a href="{{ url_for('check', user = drive.name) }}">{{drive.name}}'s Char Details</a></p>
     {% endfor %}
-
-<!--
-<style>
-    table, th, td {
-      border:3px solid rgb(10, 58, 112);
-    }
-    </style>
-<p>You are successfully logged in! Pick a driver: </p>
-<table style="background-color:rgb(19, 204, 241)">
-    <tr>
-      <th>NAME</th>
-      <th>LOCATION</th> 
-      <th>TIME</th>
-    </tr>
-    <tr>
-      <td><a href="{{url_for('confirm')}}" >John</a></td>
-      <td>101 Main St</td> 
-      <td>20-0</td>
-    </tr>
-    <tr>
-      <td><a href="{{url_for('confirm')}}" >Sarah</a></td>
-      <td>Sigma Nu</td> 
-      <td>21-1</td>
-    </tr>
-    <tr>
-        <td><a href="{{url_for('confirm')}}" >Alex</a></td>
-        <td>Gilette</td> 
-        <td>22-0</td>
-    </tr>
-    <tr>
-        <td><a href="{{url_for('confirm')}}" >Cameron</a></td>
-        <td>Downtown Columbia</td> 
-        <td>19-0</td>
-      </tr>
-    <tr>
-        <td><a href="{{url_for('confirm')}}" >Abby</a></td>
-        <td>Lafferre</td> 
-        <td>23-3</td>
-    </tr>
-</table>
--->
 {% endblock %}
