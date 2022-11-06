@@ -4,20 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!--<link href="style1.css" rel="stylesheet">-->
     </head>
-    <body>
-        <ul class="nav nav-pills nav-fill">
-            <li class="nav-item">
-              <a class="nav-link active" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/logout">Logout</a>
-            </li>
-        </ul>
+
+<body>
+  <div class="banner">
+    <div class="navbar">
+      <!--<ul class="nav nav-pills nav-fill">-->
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/login">login</a></li>
+          <li><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+
+    <div class="content"> <!--adding stuff to center of homepage-->
+      <h1>Welcome to GetChar</h1>
+      <p>Please click on the button below to begin</p>
+
+          <a href="/login"><button type="button">I need a ride</button></a>
+    </div>
+  </div> 
+
         <h1>getChar</h1>
 
             {% block content %}
