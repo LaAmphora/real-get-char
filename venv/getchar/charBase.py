@@ -55,7 +55,7 @@ def login():
 
 @app.route('/')      
 def base():
-    return render_template("base.html")
+    return render_template("NEWbase.html")
 
 
 if __name__ == "__main__":
